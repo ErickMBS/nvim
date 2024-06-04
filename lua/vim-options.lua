@@ -14,6 +14,8 @@ vim.cmd("set hidden")
 
 vim.g.mapleader = " "
 vim.g.background = "light"
+-- caminho do python 3
+vim.g.python3_host_prog = '/usr/bin/python3'
 
 vim.opt.swapfile = false
 
