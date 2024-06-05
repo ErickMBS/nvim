@@ -48,15 +48,15 @@ return {
 			)
 			vim.api.nvim_set_keymap(
 				"n",
-				"<leader>b",
+				"<leader>sb",
 				'<Cmd>lua require("dap").toggle_breakpoint()<CR>',
-				{ noremap = true, silent = true }
+				{ noremap = true, silent = true, desc = "Breakpoint" }
 			)
 			vim.api.nvim_set_keymap(
 				"n",
-				"<leader>B",
+				"<leader>sB",
 				'<Cmd>lua require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>',
-				{ noremap = true, silent = true }
+				{ noremap = true, silent = true, desc = "Conditional Breakpoint" }
 			)
 			vim.api.nvim_set_keymap(
 				"n",
