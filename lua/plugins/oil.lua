@@ -1,8 +1,11 @@
 return {
+  -- é um menu de arquivos recentes
   "stevearc/oil.nvim",
-  config = function()
-    local oil = require("oil")
-    oil.setup()
-    vim.keymap.set("n", "-", oil.toggle_float, {})
-  end,
+  keys = {
+    { "<leader>mF", "<CMD>Oil<CR>", { desc = "Open Oil file manager" } },
+  },
+  opts = {
+    default_file_explorer = false,
+  },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
 }
