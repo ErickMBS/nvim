@@ -14,4 +14,28 @@ vim.opt.rtp:prepend(lazypath)
 require("config.vim-options")
 require("config.keymap")
 require("config.autocmds")
-require("lazy").setup("plugins")
+
+require("lazy").setup({
+	spec = {
+		{ import = "plugins" },
+	},
+	install = { colorscheme = { "nightfox", "habamax" } },
+	change_detection = {
+		notify = false
+	},
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				"man",
+				"rplugin",
+				"netrwPlugin",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
+		},
+	}
+})
+
