@@ -18,6 +18,7 @@ vim.g.background = "light"
 vim.g.python3_host_prog = '/usr/bin/python3'
 
 vim.opt.swapfile = false
+vim.opt.clipboard = "unnamedplus"
 
 -- Navigate vim panes better
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")

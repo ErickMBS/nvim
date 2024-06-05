@@ -71,3 +71,15 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.spell = true
 	end,
 })
+
+vim.api.nvim_create_augroup("cs_filetype", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  group = "cs_filetype",
+  pattern = "cs",
+  callback = function()
+    vim.bo.shiftwidth = 4
+    vim.bo.tabstop = 4
+    vim.bo.expandtab = true
+  end,
+})
+
