@@ -21,6 +21,12 @@ return {
           vim.lsp.buf.format()
         end,
       })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = "*.ts",
+        callback = function()
+          vim.lsp.buf.format()
+        end,
+      })
 
       vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
     end,

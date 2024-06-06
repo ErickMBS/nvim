@@ -55,9 +55,48 @@ return {
           buf_set_keymap(bufnr, 'n', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
         end,
       })
+
       local lspconfig = require('lspconfig')
+
+      -- lua setup
       lspconfig.lua_ls.setup({
         capabilities = capabilities
+      })
+
+      -- ts setup
+      local function organize_imports()
+        local params = {
+          command = "_typescript.organizeImports",
+          arguments = { vim.api.nvim_buf_get_name(0) },
+        }
+        vim.lsp.buf.execute_command(params)
+      end
+
+      lspconfig.tsserver.setup({
+        init_options = {
+          preferences = {
+            disableSuggestions = true,
+          }
+        },
+        commands = {
+          OrganizeImports = {
+            organize_imports,
+            description = "Organize Imports",
+          }
+        },
+        on_attach = function(client, bufnr)
+          local buf_set_keymap = vim.api.nvim_buf_set_keymap
+          local opts = { noremap = true, silent = true }
+          -- Mapeamentos adicionais similares ao VSCode
+          buf_set_keymap(bufnr, 'n', '<F12>', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+          buf_set_keymap(bufnr, 'i', '<F12>', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+          buf_set_keymap(bufnr, 'n', '<leader><F12>', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+          buf_set_keymap(bufnr, 'n', '<leader>.', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+          buf_set_keymap(bufnr, 'i', '>.', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+          buf_set_keymap(bufnr, 'n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
+          buf_set_keymap(bufnr, 'n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+          buf_set_keymap(bufnr, 'n', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+        end,
       })
     end,
   },
@@ -70,9 +109,17 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     requires = { "williamboman/mason.nvim" },
+    event = "VeryLazy",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "csharp_ls", "lua_ls" },
+        ensure_installed = {
+          "csharp_ls",
+          "lua_ls",
+          "tsserver",
+          "eslint",
+          -- "prettier",
+          -- "js-debug-adapter",
+        },
       })
     end,
   },
@@ -96,4 +143,20 @@ return {
       vim.keymap.set("n", "<leader>lu", toggleLines, { desc = "Toggle Underline Diagnostics", silent = true })
     end,
   },
+  {
+    "mfussenegger/nvim-lint",
+    event = "VeryLazy",
+    config = function()
+      require('lint').linters_by_ft = {
+        javascript = { "eslint" },
+        typescript = { "eslint" },
+      }
+
+      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+        callback = function()
+          require("lint").try_lint()
+        end,
+      })
+    end
+  }
 }

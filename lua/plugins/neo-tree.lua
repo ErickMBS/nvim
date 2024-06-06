@@ -11,6 +11,15 @@ return {
 --      vim.keymap.set('n', '<leader>n', ':Neotree reveal toggle<CR>', {})
       vim.keymap.set('n', '<C-b>', ':Neotree reveal toggle<CR>', {})
       require("neo-tree").setup({
+        filesystem = {
+          filtered_items = {
+            hide_dotfiles = false,
+            hide_by_name = {
+              '.git',
+              '.vscode'
+            }
+          }
+        },
         window = {
           width = 30,
           mappings = {
