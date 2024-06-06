@@ -58,10 +58,10 @@ return {
     -- cmd = "LoadColors",
     config = function ()
       require("onedark").setup({
-        style = "darker"
+        style = "dark"
       })
       require('onedark').load()
-      vim.cmd.colorscheme "onedarker"
+      vim.cmd.colorscheme "onedark"
     end
   },
   {
