@@ -11,6 +11,7 @@ vim.cmd("set splitbelow splitright")
 vim.cmd("set title")
 vim.cmd("set ttimeoutlen=0")
 vim.cmd("set hidden")
+vim.cmd("set nowrap")
 
 vim.g.mapleader = " "
 vim.g.background = "light"
