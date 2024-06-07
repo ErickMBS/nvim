@@ -48,4 +48,16 @@ M.generate_launch_json = function(has_src, net_version, project_name)
   print("launch.json created at " .. launch_json_path)
 end
 
+M.is_dotnet_project = function()
+  local files = vim.fn.glob("*.csproj", false, true)
+  local sln = vim.fn.glob("*.sln", false, true)
+  return #files > 0 or #sln > 0
+end
+
+M.pre_build_command = function ()
+  if M.is_dotnet_project() then
+    vim.cmd("!dotnet build")
+  end
+end
+
 return M

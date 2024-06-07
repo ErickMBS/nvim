@@ -37,9 +37,3 @@ vim.api.nvim_create_user_command('GenerateLaunchJson', function(opts)
   require('config.utils-dotnet').generate_launch_json(has_src, net_version, project_name)
 end, { nargs = '*' })
 
-
--- vim.api.nvim_create_user_command('GenerateLaunchJson', function(opts)
--- local has_src = opts.fargs[1] == "true"
--- local project_name = opts.fargs[2]
--- require('utils-dotnet').generate_launch_json(has_src, project_name)
--- end, { nargs = 2 })
