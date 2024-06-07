@@ -5,7 +5,7 @@ return
     -- enabled = false,
     -- event = "VeryLazy",
     event = { "BufReadPre", "BufNewFile" },
-    tag = "*",
+    -- tag = "*",
     dependencies = {
       'nvim-tree/nvim-web-devicons'
     },

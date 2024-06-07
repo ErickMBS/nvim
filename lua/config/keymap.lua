@@ -20,3 +20,24 @@ vim.keymap.set({ 'n', 't' }, '<S-Right>', ':vertical res -1^M<CR>', { silent = t
 vim.keymap.set({ 'n', 't' }, '<C-Up>', ':resize -1<CR>', { silent = true })
 vim.keymap.set({ 'n', 't' }, '<C-Down>', ':resize +1<CR>', { silent = true })
 
+-- Navegar no layout
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>") -- vai para a janela que estiver acima
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>") -- vai para a janela que estiver abaixo
+vim.keymap.set("n", "<c-h>", ":wincmd h<CR>") -- vai para a janela que estiver a esquerda
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>") -- vai para a janela que estiver a direita
+
+vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
+
+vim.api.nvim_create_user_command('GenerateLaunchJson', function(opts)
+  local has_src = opts.fargs[1] == "true"
+  local net_version = opts.fargs[2]
+  local project_name = opts.fargs[3]
+  require('config.utils-dotnet').generate_launch_json(has_src, net_version, project_name)
+end, { nargs = '*' })
+
+
+-- vim.api.nvim_create_user_command('GenerateLaunchJson', function(opts)
+-- local has_src = opts.fargs[1] == "true"
+-- local project_name = opts.fargs[2]
+-- require('utils-dotnet').generate_launch_json(has_src, project_name)
+-- end, { nargs = 2 })
