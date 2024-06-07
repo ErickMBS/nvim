@@ -13,6 +13,11 @@ return {
     },
     config = function()
       local dap = require("dap")
+
+      dap.listeners.before.event_initialized["pre_build"] = function()
+        require('config.utils-dotnet').pre_build_command()
+      end
+
       dap.adapters.coreclr = {
         type = "executable",
         command = "/usr/local/bin/netcoredbg/netcoredbg",
