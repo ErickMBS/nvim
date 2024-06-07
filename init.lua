@@ -16,26 +16,25 @@ require("config.keymap")
 require("config.autocmds")
 
 require("lazy").setup({
-	spec = {
-		{ import = "plugins" },
-	},
-	install = { colorscheme = { "onedarker", "nightfox", "habamax" } },
-	change_detection = {
-		notify = false
-	},
-	performance = {
-		rtp = {
-			disabled_plugins = {
-				"gzip",
-				"man",
-				"rplugin",
-				"netrwPlugin",
-				"tarPlugin",
-				"tohtml",
-				"tutor",
-				"zipPlugin",
-			},
-		},
-	}
+  spec = {
+    { import = "plugins" },
+  },
+  install = { colorscheme = { "onedarker", "nightfox", "habamax" } },
+  change_detection = {
+    notify = false
+  },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "man",
+        "rplugin",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  }
 })
-

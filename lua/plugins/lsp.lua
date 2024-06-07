@@ -48,6 +48,7 @@ return {
           buf_set_keymap(bufnr, 'n', '<F12>', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
           buf_set_keymap(bufnr, 'i', '<F12>', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
           buf_set_keymap(bufnr, 'n', '<leader><F12>', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+          buf_set_keymap(bufnr, 'i', '<S-F12>', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
           buf_set_keymap(bufnr, 'n', '<leader>.', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
           buf_set_keymap(bufnr, 'i', '>.', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
           buf_set_keymap(bufnr, 'n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)

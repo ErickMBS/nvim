@@ -20,6 +20,10 @@ return {
             }
           }
         },
+        opts = {
+          auto_restore_session_experimental = true,
+          auto_clean_after_session_restore = false,
+        },
         window = {
           width = 30,
           mappings = {

@@ -6,6 +6,8 @@ vim.keymap.set("v", "<C-s>", vim.cmd.w, { desc = "Save Buffer", silent = true })
 vim.keymap.set('i', '<C-Del>', "<Esc>lce")
 vim.keymap.set('n', '<C-Del>', "ce")
 
+vim.keymap.set('n', 'Q', ':quitall<CR>', { desc = "Fechar todos", silent = true })
+
 -- Split navigation and management
 vim.keymap.set('n', '<C-left>', ':bprev<CR>', { desc = 'Goto Previous Buffer', silent = true })
 vim.keymap.set('n', '<C-right>', ':bnext<CR>', { desc = 'Goto Next Buffer', silent = true })
