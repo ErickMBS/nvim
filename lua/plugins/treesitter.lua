@@ -18,6 +18,9 @@ return {
         "c_sharp",
         "python",
       },
+      autotag = {
+        enable = true,
+      },
       sync_install = false,
       highlight = { enable = true },
       indent = { enable = true },
