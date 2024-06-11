@@ -100,6 +100,20 @@ return {
           buf_set_keymap(bufnr, 'n', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
         end,
       })
+
+      lspconfig.angularls.setup({
+        cmd = { "ngserver", "--stdio" },
+        on_new_config = function(new_config, new_root_dir)
+          new_config.cmd = { "ngserver", "--stdio", "--tsProbeLocations", new_root_dir, "--ngProbeLocations",
+            new_root_dir }
+        end,
+        on_attach = on_attach,
+        capabilities = capabilities,
+        flags = {
+          debounce_text_changes = 150,
+        },
+        root_dir = require 'lspconfig'.util.root_pattern('angular.json', 'project.json')
+      })
     end,
   },
   {
@@ -119,6 +133,7 @@ return {
           "lua_ls",
           "tsserver",
           "eslint",
+          "angularls",
           -- "prettier",
           -- "js-debug-adapter",
         },

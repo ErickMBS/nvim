@@ -3,6 +3,7 @@ return {
   build = ":TSUpdate",
   config = function()
     local configs = require("nvim-treesitter.configs")
+    require('nvim-ts-autotag').setup()
     configs.setup({
       ensure_installed = {
         "c",
