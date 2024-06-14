@@ -2,7 +2,13 @@ return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   config = function()
-    require('nvim-ts-autotag').setup({
+    require('nvim-ts-autotag').setup()
+
+    local status, treesiter = pcall(require, "nvim-treesitter.configs")
+    if not status then
+      return
+    end
+    treesiter.setup({
       ensure_installed = {
         "c",
         "lua",
@@ -20,6 +26,7 @@ return {
       autotag = {
         enable = true,
       },
+      auto_instal = true,
       sync_install = false,
       highlight = { enable = true },
       indent = { enable = true },

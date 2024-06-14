@@ -19,7 +19,7 @@ return {
           buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
           buf_set_keymap(bufnr, "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
           buf_set_keymap(bufnr, "n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-          buf_set_keymap(bufnr, "n", "<C-k>", "<Cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+          buf_set_keymap(bufnr, "n", "<leader>k", "<Cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
           buf_set_keymap(bufnr, "n", "<leader>wa", "<Cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
           buf_set_keymap(bufnr, "n", "<leader>wr", "<Cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
           buf_set_keymap(
@@ -54,7 +54,7 @@ return {
           buf_set_keymap(bufnr, 'i', '>.', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
           buf_set_keymap(bufnr, 'n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
           buf_set_keymap(bufnr, 'n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-          buf_set_keymap(bufnr, 'n', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+          buf_set_keymap(bufnr, 'n', '<leader>k', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
         end,
       })
 
@@ -97,7 +97,7 @@ return {
           buf_set_keymap(bufnr, 'i', '>.', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
           buf_set_keymap(bufnr, 'n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
           buf_set_keymap(bufnr, 'n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-          buf_set_keymap(bufnr, 'n', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+          buf_set_keymap(bufnr, 'n', '<leader>k', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
         end,
       })
 
@@ -134,6 +134,7 @@ return {
           "tsserver",
           "eslint",
           "angularls",
+          "coreclr",
           -- "prettier",
           -- "js-debug-adapter",
         },
