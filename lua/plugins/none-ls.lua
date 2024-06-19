@@ -1,5 +1,6 @@
 return {
   {
+    -- Formatação e Lint
     "nvimtools/none-ls.nvim",
     lazy = true,
     config = function()

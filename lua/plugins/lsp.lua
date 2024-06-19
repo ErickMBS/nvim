@@ -134,7 +134,7 @@ return {
           "tsserver",
           "eslint",
           "angularls",
-          "coreclr",
+          -- "coreclr",
           -- "prettier",
           -- "js-debug-adapter",
         },

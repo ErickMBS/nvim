@@ -1,6 +1,7 @@
 return {
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.6',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.6',
     dependencies = {
       'nvim-lua/plenary.nvim',
       {
@@ -24,6 +25,9 @@ return {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown {}
           }
+        },
+        defaults = {
+          layout_strategy = 'vertical',
         }
       }
       require("telescope").load_extension("ui-select")

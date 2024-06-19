@@ -44,7 +44,7 @@ return {
     -- event = "VeryLazy",
     --config = function()
     --  vim.cmd.colorscheme "lunar"
-      -- vim.api.nvim_create_user_command( 'LoadColors', function(opts) end, {})
+    -- vim.api.nvim_create_user_command( 'LoadColors', function(opts) end, {})
     --end
   },
   {
@@ -55,14 +55,14 @@ return {
   {
     "navarasu/onedark.nvim",
     -- event = "VeryLazy",
-    -- cmd = "LoadColors",
-    config = function ()
-      require("onedark").setup({
-        style = "dark"
-      })
-      require('onedark').load()
-      vim.cmd.colorscheme "onedark"
-    end
+    cmd = "LoadColors",
+    -- config = function ()
+    -- require("onedark").setup({
+    -- style = "dark"
+    -- })
+    -- require('onedark').load()
+    -- vim.cmd.colorscheme "onedark"
+    -- end
   },
   {
     "rebelot/kanagawa.nvim",
@@ -117,6 +117,13 @@ return {
   {
     'loctvl842/monokai-pro.nvim',
     -- event = "VeryLazy",
-    cmd = "LoadColors",
+    -- cmd = "LoadColors",
+    config = function()
+      require("monokai-pro").setup({
+        -- ... your config
+      })
+      -- lua
+      vim.cmd([[colorscheme monokai-pro]])
+    end
   }
 }

@@ -1,4 +1,6 @@
 return {
+  -- Usado para navegação, busca e vai para o local
+  -- usando s ou S 
   {
 		"folke/flash.nvim",
 		-- event = "VeryLazy",
