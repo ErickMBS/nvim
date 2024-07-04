@@ -5,11 +5,6 @@ return {
 		-- event = "VeryLazy",
 	},
 	{
-		'github/copilot.vim',
-		event = { "BufReadPre", "BufNewFile" },
-		-- event = "VeryLazy",
-	},
-	{
 		'L3MON4D3/LuaSnip',
 		-- event = "VeryLazy",
 		lazy = true,
@@ -29,7 +24,12 @@ return {
 		},
 		config = function()
 			local cmp = require 'cmp'
+      local lspkind = require('lspkind');
+
 			require("luasnip.loaders.from_vscode").lazy_load()
+
+      lspkind.init({})
+
 			cmp.setup({
 				snippet = {
 					expand = function(args)
