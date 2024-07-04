@@ -46,6 +46,7 @@ M.generate_launch_json = function(has_src, net_version, project_name)
   file:write(json)
   file:close()
   print("launch.json created at " .. launch_json_path)
+  vim.notify("launch.json created at " .. launch_json_path, "success")
 end
 
 M.is_dotnet_project = function()
@@ -57,6 +58,7 @@ end
 M.pre_build_command = function ()
   if M.is_dotnet_project() then
     vim.cmd("!dotnet build")
+    vim.notify("build ok", "info")
   end
 end
 
