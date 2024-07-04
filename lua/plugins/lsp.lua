@@ -1,6 +1,9 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      { 'onsails/lspkind.nvim' },
+    },
     config = function()
       require("lspconfig").csharp_ls.setup({
         settings = {
