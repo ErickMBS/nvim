@@ -2,13 +2,15 @@ return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   config = function()
-    require('nvim-ts-autotag').setup()
-
     local status, treesiter = pcall(require, "nvim-treesitter.configs")
     if not status then
       return
     end
-    treesiter.setup({
+
+    require('nvim-ts-autotag').setup({
+      enable_close = true,
+      enable_rename = true,
+      enable_close_on_slash = false,
       ensure_installed = {
         "c",
         "lua",
@@ -31,36 +33,36 @@ return {
       highlight = { enable = true },
       indent = { enable = true },
       textobjects = {
-				move = {
-					ehnable = true,
-					set_jumps = true,
-					goto_next_start = {
-						["]m"] = "@function.outer",
-						["]c"] = "@class.outer",
-					},
-					-- goto next end
-					goto_next_end = {
-						["]M"] = "@function.outer",
-						["]C"] = "@class.outer",
-					},
-				},
-				select = {
-					enable = true,
-					lookahead = true,
-					keymaps = {
-						["af"] = "@function.outer",
-						["if"] = "@function.inner",
-						["am"] = "@function.outer",
-						["im"] = "@function.inner",
-						["ac"] = "@class.outer",
-						["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
-						["ib"] = "@block.inner",
-						["ab"] = "@block.outer",
-						["iP"] = "@parameter.inner",
-						["aP"] = "@parameter.outer",
-					},
-				},
-			},
+        move = {
+          ehnable = true,
+          set_jumps = true,
+          goto_next_start = {
+            ["]m"] = "@function.outer",
+            ["]c"] = "@class.outer",
+          },
+          -- goto next end
+          goto_next_end = {
+            ["]M"] = "@function.outer",
+            ["]C"] = "@class.outer",
+          },
+        },
+        select = {
+          enable = true,
+          lookahead = true,
+          keymaps = {
+            ["af"] = "@function.outer",
+            ["if"] = "@function.inner",
+            ["am"] = "@function.outer",
+            ["im"] = "@function.inner",
+            ["ac"] = "@class.outer",
+            ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+            ["ib"] = "@block.inner",
+            ["ab"] = "@block.outer",
+            ["iP"] = "@parameter.inner",
+            ["aP"] = "@parameter.outer",
+          },
+        },
+      },
     })
   end,
 }

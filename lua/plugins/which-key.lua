@@ -8,45 +8,19 @@ return {
     end,
     config = function()
       local wk = require("which-key")
-      wk.register({
-        ["<leader>"] = {
-          a = {
-            name = "+Code Actions"
-          },
-          b = {
-            name = "+Buffers"
-          },
-          d = {
-            name = "+Dap"
-          },
-          f = {
-            name = "+Fing / Grep"
-          },
-          g = {
-            name = "+Format Lint"
-          },
-          l = {
-            name = "+Underline Diagnostics"
-          },
-          m = {
-            name = "+Oil"
-          },
-          n = {
-            name = "+DotNet"
-          },
-          p = {
-            name = "+Code Previews"
-          },
-          s = {
-            name = "+Breakpoints"
-          },
-          t = {
-            name = "+Terminal"
-          },
-          x = {
-            name = "+Throuble Diagnostics"
-          }
-        }
+      wk.add({
+        { "<leader>a", group = "Code Actions" },
+        { "<leader>b", group = "Buffers" },
+        { "<leader>d", group = "Dap" },
+        { "<leader>f", group = "Fing / Grep" },
+        { "<leader>g", group = "Format Lint" },
+        { "<leader>l", group = "Underline Diagnostics" },
+        { "<leader>m", group = "Oil" },
+        { "<leader>n", group = "DotNet" },
+        { "<leader>p", group = "Code Previews" },
+        { "<leader>s", group = "Breakpoints" },
+        { "<leader>t", group = "Terminal" },
+        { "<leader>x", group = "Throuble Diagnostics" },
       })
     end
   },
