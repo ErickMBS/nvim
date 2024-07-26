@@ -27,6 +27,7 @@ return {
 				-- theme = 'dracula',
 				-- theme = 'horizon',
 				icon_enabled = true,
+        theme = 'auto',
 			},
 			sections = {
 				lualine_x = {
