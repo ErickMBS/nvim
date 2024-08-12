@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("config.vim-options")
 require("config.keymap")
 require("config.autocmds")
+vim.opt.termguicolors = true
 
 require("lazy").setup({
   spec = {

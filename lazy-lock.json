@@ -15,6 +15,7 @@
   "cmp-nvim-lsp-signature-help": { "branch": "main", "commit": "031e6ba70b0ad5eee49fd2120ff7a2e325b17fa7" },
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
   "codeium.nvim": { "branch": "main", "commit": "f6a2ef32a9e923cb0104a19d3e426b0e40e49505" },
+  "cyberdream.nvim": { "branch": "main", "commit": "31f31f27dbc2517f72656ad4031f15d25a20dcf2" },
   "dotnet.nvim": { "branch": "main", "commit": "a3716946f23ee6fc8e37d3cb923d4a831cb7edf7" },
   "dressing.nvim": { "branch": "master", "commit": "6741f1062d3dc6e4755367a7e9b347b553623f04" },
   "edge": { "branch": "master", "commit": "2de1aede94569f643de438391f6c8b1712038d35" },

@@ -19,7 +19,7 @@ return {
     name = "catppuccin",
     -- priority = 1000,
     -- config = function()
-    -- 	vim.cmd.colorscheme "catppuccin"
+    	-- vim.cmd.colorscheme "catppuccin"
     -- end
   },
   {
@@ -140,8 +140,21 @@ return {
         guicursor   = true,
       })
 
-      vim.opt.termguicolors = true
-      vim.cmd([[colorscheme bluloco]])
+      -- vim.opt.termguicolors = true
+      -- vim.cmd([[colorscheme bluloco]])
+    end
+  },
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("cyberdream").setup({
+        transparent = true,
+        italic = false,
+        terminal_colors = true,
+      })
+      vim.cmd([[colorscheme cyberdream]])
     end
   }
 }
