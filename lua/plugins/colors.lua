@@ -82,7 +82,10 @@ return {
   {
     'sainnhe/edge',
     -- event = "VeryLazy",
-    cmd = "LoadColors",
+    --cmd = "LoadColors",
+    config = function()
+      vim.cmd([[colorscheme edge]])
+    end
   },
   {
     'Mofiqul/vscode.nvim',
@@ -129,6 +132,7 @@ return {
   {
     'uloco/bluloco.nvim',
     lazy = false,
+    cmd = "LoadColors",
     priority = 1000,
     dependencies = { 'rktjmp/lush.nvim' },
     config = function()
@@ -147,6 +151,7 @@ return {
   {
     "scottmckendry/cyberdream.nvim",
     lazy = false,
+    cmd = "LoadColors",
     priority = 1000,
     config = function()
       require("cyberdream").setup({
@@ -154,7 +159,7 @@ return {
         italic = false,
         terminal_colors = true,
       })
-      vim.cmd([[colorscheme cyberdream]])
+      -- vim.cmd([[colorscheme cyberdream]])
     end
   }
 }
