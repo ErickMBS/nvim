@@ -77,7 +77,8 @@ return {
         vim.lsp.buf.execute_command(params)
       end
 
-      lspconfig.tsserver.setup({
+      -- lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         init_options = {
           preferences = {
             disableSuggestions = true,
@@ -159,7 +160,8 @@ return {
         ensure_installed = {
           "csharp_ls",
           "lua_ls",
-          "tsserver",
+          -- "tsserver",
+          "ts_ls",
           "eslint",
           "angularls",
           -- "coreclr",

@@ -18,7 +18,8 @@
 - Utilizar uma [Nerd Font](https://www.nerdfonts.com/), eu gosto e utilizo a [Jetbrains Mono](https://www.programmingfonts.org/#jetbrainsmono)
 - Instalar node (sugiro utilizar nvm);
 - Instalar Python (sugiro utilizar o pyenv);
-- Instalr .Net (as versões que você utiliza);
+- Instalar .Net (as versões que você utiliza);
+- Instalar: `npm i -g typescript-language-server typescript`;
 
 ## Angular:
 - Necessário instalar o language-server, utilizar o comando:
@@ -48,3 +49,8 @@ O exemplo que criei acima deixariam esses campos assim:
 - `"program": "${workspaceFolder}/src/WeatherForecast.Api/bin/Debug/net8.0/WeatherForecast.Api.dll"`
 - `"cwd": "${workspaceFolder}/src/WeatherForecast.Api"`
 
+## TS Autotag:
+Já está configurado para auto instalar e diversas linguagens e tipos de arquivos.
+Porém as vezes não funciona.
+E se voê verificar que para um determinado tipo de arquivo não está funcionando, por exemplo, para arquivos 'tsx' e este tipo já está configurado para instalar, então rode o comando:
+- `TSInstall tsx`
