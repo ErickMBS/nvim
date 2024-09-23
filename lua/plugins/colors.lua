@@ -26,10 +26,10 @@ return {
     "EdenEast/nightfox.nvim",
     -- priority = 1000,
     -- event = "VeryLazy",
-    -- cmd = "LoadColors",
-    config = function()
-    	vim.cmd.colorscheme "nightfox"
-    end
+    cmd = "LoadColors",
+    -- config = function()
+    	-- vim.cmd.colorscheme "nightfox"
+    -- end
   },
   {
     'rose-pine/neovim',
@@ -82,10 +82,10 @@ return {
   {
     'sainnhe/edge',
     -- event = "VeryLazy",
-    cmd = "LoadColors",
-    -- config = function()
-      -- vim.cmd([[colorscheme edge]])
-    -- end
+    -- cmd = "LoadColors",
+    config = function()
+      vim.cmd([[colorscheme edge]])
+    end
   },
   {
     'Mofiqul/vscode.nvim',
