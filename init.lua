@@ -39,3 +39,11 @@ require("lazy").setup({
     },
   }
 })
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "LazyVimLoaded",
+  callback = function()
+    vim.keymap.set('n', 'u', 'undo', { noremap = true, silent = true })
+  end,
+})
+
