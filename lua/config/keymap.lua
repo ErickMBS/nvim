@@ -30,6 +30,9 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>") -- vai para a janela que estiver a
 
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 
+vim.keymap.set('n', 'u', 'undo', { noremap = true, silent = true })
+vim.keymap.set('n', '<c-z>', 'undo', { noremap = true, silent = true })
+
 vim.api.nvim_create_user_command('GenerateLaunchJson', function(opts)
   local has_src = opts.fargs[1] == "true"
   local net_version = opts.fargs[2]

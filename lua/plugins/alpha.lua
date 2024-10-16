@@ -36,7 +36,7 @@ return {
 			dashboard.button('t', "󱎸 Find text", "<cmd>Telescope live_grep<CR>"),
 			dashboard.button('n', "󰈔 New file", ":ene <BAR> startinsert <CR>"),
 			dashboard.button('o', "󱑒 Recently opened files", "<cmd>Telescope oldfiles<CR>"),
-			dashboard.button('u', " Update Plugins", "<cmd>Lazy sync<CR>"),
+			-- dashboard.button('u', " Update Plugins", "<cmd>Lazy sync<CR>"),
 			dashboard.button('q', " Quit", ":qa<CR>")
 		}
 

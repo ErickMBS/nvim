@@ -15,12 +15,12 @@ return {
   {
     "catppuccin/nvim",
     -- event = "VeryLazy",
-    cmd = "LoadColors",
+    -- cmd = "LoadColors",
     name = "catppuccin",
-    -- priority = 1000,
-    -- config = function()
-    	-- vim.cmd.colorscheme "catppuccin-frappe"
-    -- end
+    priority = 1000,
+    config = function()
+    	vim.cmd.colorscheme "catppuccin-mocha"
+    end
   },
   {
     "EdenEast/nightfox.nvim",
@@ -82,10 +82,10 @@ return {
   {
     'sainnhe/edge',
     -- event = "VeryLazy",
-    -- cmd = "LoadColors",
-    config = function()
-      vim.cmd([[colorscheme edge]])
-    end
+    cmd = "LoadColors",
+    -- config = function()
+      -- vim.cmd([[colorscheme edge]])
+    -- end
   },
   {
     'Mofiqul/vscode.nvim',
@@ -120,14 +120,14 @@ return {
   {
     'loctvl842/monokai-pro.nvim',
     -- event = "VeryLazy",
-    -- cmd = "LoadColors",
-    config = function()
-      require("monokai-pro").setup({
+    cmd = "LoadColors",
+    -- config = function()
+      -- require("monokai-pro").setup({
         -- ... your config
-      })
+      -- })
       -- lua
       -- vim.cmd([[colorscheme monokai-pro]])
-    end
+    -- end
   },
   {
     'uloco/bluloco.nvim',
