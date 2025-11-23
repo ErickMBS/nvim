@@ -21,6 +21,8 @@ vim.keymap.set({ 'n', 't' }, '<S-Left>', ':vertical res +1^M<CR>', { silent = tr
 vim.keymap.set({ 'n', 't' }, '<S-Right>', ':vertical res -1^M<CR>', { silent = true })
 vim.keymap.set({ 'n', 't' }, '<C-Up>', ':resize -1<CR>', { silent = true })
 vim.keymap.set({ 'n', 't' }, '<C-Down>', ':resize +1<CR>', { silent = true })
+vim.keymap.set({ 'n', 't' }, '<S-Up>', ':resize -1<CR>', { silent = true })
+vim.keymap.set({ 'n', 't' }, '<S-Down>', ':resize +1<CR>', { silent = true })
 
 -- Navegar no layout
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>") -- vai para a janela que estiver acima

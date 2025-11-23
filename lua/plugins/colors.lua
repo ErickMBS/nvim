@@ -15,12 +15,12 @@ return {
   {
     "catppuccin/nvim",
     -- event = "VeryLazy",
-    -- cmd = "LoadColors",
+    cmd = "LoadColors",
     name = "catppuccin",
     priority = 1000,
-    config = function()
-    	vim.cmd.colorscheme "catppuccin-mocha"
-    end
+    -- config = function()
+    -- vim.cmd.colorscheme "catppuccin-frappe"
+    -- end
   },
   {
     "EdenEast/nightfox.nvim",
@@ -28,7 +28,7 @@ return {
     -- event = "VeryLazy",
     cmd = "LoadColors",
     -- config = function()
-    	-- vim.cmd.colorscheme "nightfox"
+    -- vim.cmd.colorscheme "nightfox"
     -- end
   },
   {
@@ -36,16 +36,16 @@ return {
     -- event = "VeryLazy",
     cmd = "LoadColors",
     -- config = function()
-    -- 	vim.cmd.colorscheme "rose-pine-moon"
+    -- vim.cmd.colorscheme "rose-pine-moon"
     -- end
   },
   {
     'LunarVim/lunar.nvim',
     -- event = "VeryLazy",
-    --config = function()
-    --  vim.cmd.colorscheme "lunar"
-    -- vim.api.nvim_create_user_command( 'LoadColors', function(opts) end, {})
-    --end
+    -- config = function()
+    -- vim.cmd.colorscheme "lunar"
+    -- vim.api.nvim_create_user_command('LoadColors', function(opts) end, {})
+    -- end
   },
   {
     "lunarvim/Onedarker.nvim",
@@ -67,7 +67,10 @@ return {
   {
     "rebelot/kanagawa.nvim",
     -- event = "VeryLazy",
-    cmd = "LoadColors",
+    -- cmd = "LoadColors",
+    config = function()
+      vim.cmd.colorscheme "kanagawa"
+    end
   },
   {
     'folke/tokyonight.nvim',
@@ -84,7 +87,7 @@ return {
     -- event = "VeryLazy",
     cmd = "LoadColors",
     -- config = function()
-      -- vim.cmd([[colorscheme edge]])
+    -- vim.cmd([[colorscheme edge]])
     -- end
   },
   {
@@ -123,7 +126,7 @@ return {
     cmd = "LoadColors",
     -- config = function()
       -- require("monokai-pro").setup({
-        -- ... your config
+      -- ... your config
       -- })
       -- lua
       -- vim.cmd([[colorscheme monokai-pro]])
@@ -148,18 +151,18 @@ return {
       -- vim.cmd([[colorscheme bluloco]])
     end
   },
-  {
-    "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    cmd = "LoadColors",
-    priority = 1000,
-    config = function()
-      require("cyberdream").setup({
-        transparent = true,
-        italic = false,
-        terminal_colors = true,
-      })
-      -- vim.cmd([[colorscheme cyberdream]])
-    end
-  }
+  -- {
+  --   "scottmckendry/cyberdream.nvim",
+  --   lazy = false,
+  --   cmd = "LoadColors",
+  --   priority = 1000,
+  --   config = function()
+  --     require("cyberdream").setup({
+  --       transparent = true,
+  --       italic = false,
+  --       terminal_colors = true,
+  --     })
+  --     -- vim.cmd([[colorscheme cyberdream]])
+  --   end
+  -- }
 }

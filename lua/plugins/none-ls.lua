@@ -25,6 +25,7 @@ return {
       vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = {"*.ts", "*.js", "*.jsx", "*.tsx"},
         callback = function()
+          -- vim.cmd("OrganizeImports")
           vim.lsp.buf.format()
         end,
       })
