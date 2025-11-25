@@ -147,19 +147,5 @@ return {
       -- vim.opt.termguicolors = true
       -- vim.cmd([[colorscheme bluloco]])
     end
-  },
-  {
-    "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    cmd = "LoadColors",
-    priority = 1000,
-    config = function()
-      require("cyberdream").setup({
-        transparent = true,
-        italic = false,
-        terminal_colors = true,
-      })
-      -- vim.cmd([[colorscheme cyberdream]])
-    end
   }
-}
+  }
