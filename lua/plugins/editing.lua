@@ -22,18 +22,22 @@ return {
   {
     'numToStr/Comment.nvim',
     config = function()
+      local api = require('Comment.api')
       require('Comment').setup({
+        -- Desativa os mapeamentos padrão para não conflitar
         mappings = {
           basic = false,
           extra = false,
         },
       })
 
-      -- Mapeamento no modo normal para 'Ctrl + k, Ctrl + c'
-      vim.api.nvim_set_keymap('n', '<C-\\>', '<Esc>gcc', { noremap = false })
-      vim.api.nvim_set_keymap('i', '<C-\\>', '<Esc>gcc', { noremap = false })
-      -- Mapeamento no modo visual para 'Ctrl + k, Ctrl + c'
-      vim.api.nvim_set_keymap('v', '<C-k><C-c>', 'gc', { noremap = false, silent = true })
+      -- Mapeamento para Comentar/Descomentar linha com <Space>kc
+      vim.keymap.set('n', '<leader>kc', api.toggle.linewise.current, { desc = "Toggle Comment Line" })
+      vim.keymap.set('v', '<leader>kc', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", { desc = "Toggle Comment Selection" })
+
+      -- Mapeamento para <Space>ku (mesma função de toggle, pois o plugin alterna)
+      vim.keymap.set('n', '<leader>ku', api.toggle.linewise.current, { desc = "Toggle Comment Line" })
+      vim.keymap.set('v', '<leader>ku', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", { desc = "Toggle Comment Selection" })
     end
   },
   {

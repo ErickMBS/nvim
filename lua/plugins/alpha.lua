@@ -37,7 +37,7 @@ return {
 			dashboard.button('n', "󰈔 New file", ":ene <BAR> startinsert <CR>"),
 			dashboard.button('o', "󱑒 Recently opened files", "<cmd>Telescope oldfiles<CR>"),
 			-- dashboard.button('u', " Update Plugins", "<cmd>Lazy sync<CR>"),
-			dashboard.button('q', " Quit", ":qa<CR>")
+			dashboard.button('Q', " Quit", ":qa<CR>")
 		}
 
 		dashboard.section.header.val = name
