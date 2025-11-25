@@ -15,12 +15,12 @@ return {
   {
     "catppuccin/nvim",
     -- event = "VeryLazy",
-    cmd = "LoadColors",
+    -- cmd = "LoadColors",
     name = "catppuccin",
     priority = 1000,
-    -- config = function()
-    -- vim.cmd.colorscheme "catppuccin-frappe"
-    -- end
+    config = function()
+      vim.cmd.colorscheme "catppuccin-frappe"
+    end
   },
   {
     "EdenEast/nightfox.nvim",
@@ -67,10 +67,10 @@ return {
   {
     "rebelot/kanagawa.nvim",
     -- event = "VeryLazy",
-    -- cmd = "LoadColors",
-    config = function()
-      vim.cmd.colorscheme "kanagawa"
-    end
+    cmd = "LoadColors",
+    -- config = function()
+      -- vim.cmd.colorscheme "kanagawa"
+    -- end
   },
   {
     'folke/tokyonight.nvim',
